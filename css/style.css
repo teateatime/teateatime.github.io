@@ -1,0 +1,91 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    min-width: 415px;
+}
+
+.header {
+    margin-top: 40vh;
+}
+
+.coffee-table-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../images/office-table.jpg") no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.coffee-table-container {
+    min-width: 415px;
+}
+
+.darken {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/office-table.jpg");
+}
+
+#header-info {
+    position: relative;
+}
+
+.contacts {
+    display: inline-flex;
+    list-style: none;
+    padding-left: 0rem;
+}
+
+.contacts li {
+    padding: 10px 30px;
+}
+
+.contacts li a {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid azure;
+    color: azure;
+    padding: 5px;
+    width: 75px;
+}
+
+.about {
+    padding-top: 60vh;
+}
+
+#about-info {
+    position: relative;
+}
+
+#about-context {
+    float: left;
+    text-align: initial;
+}
+
+#skill-info {
+    padding-top: 40vh;
+}
+
+@media (max-width: 415px) {
+    h2 {
+
+    }
+    .contacts {
+        margin-left: -20px;
+    }
+}
