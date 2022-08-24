@@ -5,24 +5,15 @@
 }
 
 html, body {
-    width: 100%;
     height: 100%;
-    margin: 0px;
-    padding: 0px;
+    background: mintcream;
 }
 
-body {
-    min-width: 415px;
+div {
+    font-family: "Montserrat", Avenir, Helvetica, Arial, sans-serif;
 }
 
-.header {
-    margin-top: 40vh;
-}
-
-.coffee-table-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+.header-container {
     height: 100%;
     width: 100%;
     background: url("../images/office-table.jpg") no-repeat center;
@@ -32,17 +23,62 @@ body {
     -o-background-size: cover;
 }
 
-.coffee-table-container {
-    min-width: 415px;
-}
-
 .darken {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../images/office-table.jpg");
 }
 
 #header-info {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.name {
     position: relative;
+    font-size: 3rem;
+    text-align: center;
+    left: -5px
+}
+
+.animation:nth-child(1) {
+    animation-delay: 50ms;
+}
+.animation:nth-child(2) {
+    animation-delay: 100ms;
+}
+.animation:nth-child(3) {
+    animation-delay: 150ms;
+}
+.animation:nth-child(4) {
+    padding: 1vh;
+    letter-spacing: -1vw;
+}
+.animation:nth-child(5) {
+    animation-delay: 200ms;
+}
+.animation:nth-child(6) {
+    animation-delay: 250ms;
+}
+.animation:nth-child(7) {
+    animation-delay: 300ms;
+}
+.animation:nth-child(8) {
+    animation-delay: 350ms;
+}
+.animation:nth-child(9) {
+    animation-delay: 400ms;
+}
+.animation:nth-child(10) {
+    animation-delay: 450ms;
+}
+
+.animation {
+    letter-spacing: -0.9vw;
+    position: relative;
+    animation: intro-animation 2s ease-out;
 }
 
 .contacts {
@@ -52,7 +88,7 @@ body {
 }
 
 .contacts li {
-    padding: 10px 30px;
+    padding: 0.2em 0.5em;
 }
 
 .contacts li a {
@@ -61,31 +97,71 @@ body {
     border: 1px solid azure;
     color: azure;
     padding: 5px;
-    width: 75px;
-}
-
-.about {
-    padding-top: 60vh;
+    width: 90px;
 }
 
 #about-info {
-    position: relative;
+    margin-top: 0vh!important;
 }
 
-#about-context {
-    float: left;
-    text-align: initial;
+#about-intro {
+    margin: 0 auto;
 }
 
-#skill-info {
-    padding-top: 40vh;
+#skills-info {
+    margin-top: 0vh!important;
+    background-color: rgb(35, 209, 209);
 }
 
-@media (max-width: 415px) {
-    h2 {
+#tech-summary {
+    margin: 0 auto;
+}
 
+#skills-content {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+#skills-content div:nth-child(odd) {
+    justify-self: end;
+}
+
+#skills-content div:nth-child(even) {
+    justify-self: flex-start;
+}
+
+#skills-content div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+#projects-info {
+    margin-top: 10vh;
+}
+
+i {
+    padding: 10px;
+}
+
+@keyframes intro-animation {
+    0% {
+        opacity: 0;
+        top: -200px;
     }
-    .contacts {
-        margin-left: -20px;
+
+    70% {
+        opacity: 1;
+        top: 15px;
+    }
+
+    85% {
+        opacity: 1;
+        top: -10px;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0;
     }
 }
