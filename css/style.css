@@ -4,6 +4,19 @@
     padding: 0;
 }
 
+/* Variable Declarations */
+:root {
+    --name: 3rem;
+    --cntw: 6.75rem;
+    --cnts: 1rem;
+    --abtInfo: 1rem;
+    --h2: 1.85rem;
+    --h3: 1.7rem;
+    --skill: 1.2rem;
+    --projInf: 1rem;
+    --copy: 1rem;
+}
+
 html, body {
     height: 100%;
     background: mintcream;
@@ -11,6 +24,20 @@ html, body {
 
 div {
     font-family: "Montserrat", Avenir, Helvetica, Arial, sans-serif;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+i {
+    padding: 5px;
+}
+
+footer p {
+    margin-top: 20px;
+    padding-bottom: 5px;
+    font-size: var(--copy);
 }
 
 .header-container {
@@ -37,8 +64,9 @@ div {
 }
 
 .name {
+    text-decoration: none;
     position: relative;
-    font-size: 3rem;
+    font-size: var(--name);
     text-align: center;
     left: -5px
 }
@@ -89,6 +117,7 @@ div {
 
 .contacts li {
     padding: 0.2em 0.5em;
+    font-size: var(--cnts);
 }
 
 .contacts li a {
@@ -97,14 +126,28 @@ div {
     border: 1px solid azure;
     color: azure;
     padding: 5px;
-    width: 90px;
+    width: var(--cntw);
+}
+
+.contacts li a:hover {
+    background: linear-gradient(to bottom right, #6889FF, #C668FF);
+}
+
+.contacts li a i {
+    display: inline;
 }
 
 #about-info {
+    font-size: var(--abtInfo);
     margin-top: 0vh!important;
 }
 
+#about-info div h3 {
+    font-size: var(--h3);
+}
+
 #about-intro {
+    font-size: var(--h2);
     margin: 0 auto;
 }
 
@@ -114,6 +157,7 @@ div {
 }
 
 #tech-summary {
+    font-size: var(--h2);
     margin: 0 auto;
 }
 
@@ -132,16 +176,39 @@ div {
 
 #skills-content div {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--skill);
     padding: 10px;
+}
+
+.projects-content div:nth-child(3) .service-box {
+    text-align: left;
+}
+
+.projects-content div:nth-child(3) .service-box h3 {
+    text-decoration: underline;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 #projects-info {
-    margin-top: 10vh;
+    font-size: var(--projInf);
+    margin-top: 50px;
 }
 
-i {
-    padding: 10px;
+#proj-summary {
+    font-size: var(--h2);
+}
+
+.service-box h3 {
+    font-size: var(--h3);
+}
+
+.service-box h3 a, .service-box ol li a {
+    text-decoration: none;
+}
+
+.service-box ol li a span {
+    text-decoration: underline;
 }
 
 @keyframes intro-animation {
@@ -163,5 +230,66 @@ i {
     100% {
         opacity: 1;
         top: 0;
+    }
+}
+
+@media only screen
+and (min-device-width : 451px)
+and (max-device-width : 800px) {
+    :root {
+        --name: 4rem;
+        --cntw: 9rem;
+        --cnts: 1.5rem;
+        --abtInfo: 1.85rem;
+        --h2: 2.75rem;
+        --h3: 2.25rem;
+        --skill: 2rem;
+        --projInf: 2rem;
+        --copy: 1.6rem;
+    }
+    .service-box a i {
+        padding: 15px;
+    }
+    .projects-content div:nth-child(3) .service-box {
+        text-align: center;
+    }
+}
+
+@media only screen
+and (min-device-width : 1px)
+and (max-device-width : 450px) {
+    :root {
+        --name: 4.5rem;
+        --cntw: 15.25rem;
+        --cnts: 2.75rem;
+        --abtInfo: 3rem;
+        --h2: 4rem;
+        --h3: 3.5rem;
+        --skill: 2.45rem;
+        --projInf: 3rem;
+        --copy: 2.4rem;
+    }
+    .col-sm-12 {
+        flex: 0 0 auto!important;
+        width: 100%!important;
+    }
+    .contacts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .contacts li:nth-child(odd) {
+        justify-self: end;
+    }
+    .contacts li:nth-child(even) {
+        justify-self: start;
+    }
+    #about-info div, #projects-info div, #skills-content {
+        margin-top: 50px;
+    }
+    .service-box a i {
+        padding: 15px;
+    }
+    .projects-content div:nth-child(3) .service-box {
+        text-align: center;
     }
 }
