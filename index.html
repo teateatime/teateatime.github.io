@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="text-center mt-4 p-5 bg-primary text-white" id="about-info">
-        <h2 id="about-intro">About Me</h2>
+        <h2 id="about-label">About Me</h2>
         <div class="container" style="text-align: left;">
             <h3>Hi, I'm Tim.</h3>
             <br>
@@ -59,29 +59,30 @@
             I hope to build upon my knowledge and skills with programming to help further reach my goals
             as I aspire to become either a future software engineer or web developer.
             Other than being passionate about programming, I genuinely like to play ping pong or video games.
-            Other hobbies that I usually do are making artwork, or doing morning walks.
+            Other hobbies that I also do are making artwork, reading manga, and morning walks.
         </div>
     </div>
     <div class="text-center mt-4 p-5" id="skills-info">
         <h2 id="tech-summary">Technical Summary</h2>
-        <div id="skills-content">
+        <div id="skills-container">
             <div>Coding Languages:</div>
-            <div>C, C++, C#, JavaScript, Python, MIPS Assembly.</div>
+            <div>C, C++, JavaScript, Python, MIPS Assembly.</div>
             <div>Web Development:</div>
             <div>HTML, CSS, React, ExpressJS, NodeJS</div>
             <div>Frameworks/Libraries:</div>
-            <div>SFML, Boost C++, BootStrap, jQuery</div>
+            <div>SFML, Boost C++, BootStrap, jQuery, SQLite</div>
             <div>Other Tools & Applications:</div>
             <div>PuTTY, VirtualBox, LaTeX, Git, Figma</div>
         </div>
     </div>
     <div class="container" id="projects-info">
-        <h2 class="text-center" id="proj-summary">Projects</h2>
-        <div class="projects-content text-center row">
+        <h2 class="text-center" id="proj-label">Projects</h2>
+        <div class="projects-container text-center row">
             <div class="col col-12 col-sm-12 col-md-6">
                 <div class="service-box">
                     <a href="https://github.com/teateatime/Password-Encryption-Management-Storage-System" target="_blank">
-                        <i class="fa fa-4x fa-lock text-primary"></i>
+                        <!-- <i class="fa fa-4x fa-lock text-primary"></i> -->
+                        <img src="images/Password-Encryption.jpg" alt="Password-Encryption">
                     </a>
                     <h3>
                         <a href="https://github.com/teateatime/Password-Encryption-Management-Storage-System"
@@ -95,7 +96,8 @@
             <div class="col col-12 col-sm-12 col-md-6">
                 <div class="service-box">
                     <a href="https://github.com/teateatime/TSP" target="_blank">
-                        <i class="fa fa-4x text-primary"></i>
+                        <!-- <i class="fa fa-4x text-primary"></i> -->
+                        <img src="images/TSP.jpg" alt="TSP_IMG">
                     </a>
                     <h3>
                         <a href="https://github.com/teateatime/TSP" target="_blank">The Saving Portal</a>
@@ -104,38 +106,62 @@
                     for a whole variety of stores and display those values both numerically and statistically.
                 </div>
             </div>
-            <div class="col-md-12 ">
+            <hr style="margin: 30px; margin-bottom: 25px;">
+            <h2 id="oth-proj-label">Other Projects</h2>
+            <div class="col col-12 col-sm-12 col-md-6">
                 <div class="service-box">
-                    <hr style="margin: 50px;">
-                    <h3>Other Projects</h3>
-                    <ol>
-                        <li>
-                            <a href="pdf/ps1.pdf">
-                                <span>Photo Magic</span> - An cryptographically encryption and decryption image program that
-                                is implemented using a linear feedback shift register.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pdf/ps2.pdf">
-                            <span>Solar System Simulation</span> - A program that uses Newton's law of 
-                            universal gravitation and the "leapfrog finite difference approximation scheme"
-                            to create a realistic, animated simulation of planetary motion in our solar system.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pdf/ps3.pdf">
-                                <span>Sierpinski's Triangle</span> - Using a recursion class definition to draw
-                                Sierpinski's triangle and other recursive graphic designs with SFML.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pdf/ps4.pdf">
-                                <span>Synthesized Guitar Simulator</span> - A SFML C++ program that
-                                utilizes a ring buffer and the karplus-strong algorithm to match the respective frequencies
-                                generated from an actual guitar in order to create a computational synthesizer.
-                            </a>
-                        </li>
-                    </ol>
+                    <a href="pdf/ps1.pdf" target="_blank">
+                        <img src="images/Image-Encryption.jpg" alt="Image-Encryption">
+                    </a>
+                    <h3>
+                        <a href="pdf/ps1.pdf" target="_blank">Photo Magic</a>
+                    </h3>
+                    An cryptographically encryption and decryption image program that
+                    is implemented using a linear feedback shift register.
+                </div>
+            </div>
+            <div class="col col-12 col-sm-12 col-md-6">
+                <div class="service-box">
+                    <a href="pdf/ps2.pdf">
+                        <img src="images/Solar-System.jpg" alt="Solar-System">
+                    </a>
+                    <h3>
+                        <a href="pdf/ps2.pdf">
+                            Solar System Simulation
+                        </a>
+                    </h3>
+                    A program that uses Newton's law of
+                    universal gravitation and the "leapfrog finite difference approximation scheme"
+                    to create a realistic, animated simulation of planetary motion in our solar system.
+                </div>
+            </div>
+            <div class="col col-12 col-sm-12 col-md-6">
+                <div class="service-box">
+                    <a href="pdf/ps3.pdf">
+                        <img src="images/Triangle.png" alt="Triangle">
+                    </a>
+                    <h3>
+                        <a href="pdf/ps3.pdf">
+                            Sierpinski's Triangle
+                        </a>
+                    </h3>
+                    Using a recursion class definition to draw
+                    Sierpinski's triangle and other recursive graphic designs with SFML.
+                </div>
+            </div>
+            <div class="col col-12 col-sm-12 col-md-6">
+                <div class="service-box">
+                    <a href="pdf/ps4.pdf">
+                        <img src="images/Guitar.jpg" alt="Guitar">
+                    </a>
+                    <h3>
+                        <a href="pdf/ps4.pdf">
+                            Synthesized Guitar Simulator
+                        </a>
+                    </h3>
+                    A SFML C++ program that
+                    utilizes a ring buffer and the karplus-strong algorithm to match the respective frequencies
+                    generated from an actual guitar in order to create a computational synthesizer.
                 </div>
             </div>
         </div>
@@ -147,3 +173,62 @@
     </section>
 </body>
 </html>
+
+<!-- <div class="col-md-12 ">
+    <div class="service-box">
+        <hr style="margin: 50px;">
+        <h3 id="oth-proj-label">Other Projects</h3>
+        <div>
+            <span>
+                <a href="pdf/ps1.pdf">
+                    <img src="images/Image-Encryption.jpg" alt="Image-Encryption">
+                </a>
+                <h3>
+                    <a href="pdf/ps1.pdf">
+                        Photo Magic
+                    </a>
+                </h3>
+                An cryptographically encryption and decryption image program that
+                is implemented using a linear feedback shift register.
+            </span>
+            <span>
+                <a href="pdf/ps2.pdf">
+                    <img src="images/Solar-System.jpg" alt="Solar-System">
+                </a>
+                <h3>
+                    <a href="pdf/ps2.pdf">
+                        Solar System Simulation
+                    </a>
+                </h3>
+                A program that uses Newton's law of
+                universal gravitation and the "leapfrog finite difference approximation scheme"
+                to create a realistic, animated simulation of planetary motion in our solar system.
+            </span>
+            <span>
+                <a href="pdf/ps3.pdf">
+                    <img src="images/Triangle.png" alt="Triangle">
+                </a>
+                <h3>
+                    <a href="pdf/ps3.pdf">
+                        Sierpinski's Triangle
+                    </a>
+                </h3>
+                Using a recursion class definition to draw
+                Sierpinski's triangle and other recursive graphic designs with SFML.
+            </span>
+            <span>
+                <a href="pdf/ps4.pdf">
+                    <img src="images/Guitar.jpg" alt="Guitar">
+                </a>
+                <h3>
+                    <a href="pdf/ps4.pdf">
+                        Synthesized Guitar Simulator
+                    </a>
+                </h3>
+                A SFML C++ program that
+                utilizes a ring buffer and the karplus-strong algorithm to match the respective frequencies
+                generated from an actual guitar in order to create a computational synthesizer.
+            </span>
+        </div>
+    </div>
+</div> -->

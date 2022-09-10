@@ -15,11 +15,18 @@
     --skill: 1.2rem;
     --projInf: 1rem;
     --copy: 1rem;
+    --img-w: 20rem;
+    --img-h: 15rem;
 }
 
 html, body {
     height: 100%;
     background: mintcream;
+}
+
+img {
+    width: var(--img-w);
+    height: var(--img-h);
 }
 
 div {
@@ -142,11 +149,11 @@ footer p {
     margin-top: 0vh!important;
 }
 
-#about-info div h3 {
+#about-info div h3, .service-box h3 {
     font-size: var(--h3);
 }
 
-#about-intro {
+#about-label, #tech-summary {
     font-size: var(--h2);
     margin: 0 auto;
 }
@@ -156,35 +163,30 @@ footer p {
     background-color: rgb(35, 209, 209);
 }
 
-#tech-summary {
-    font-size: var(--h2);
-    margin: 0 auto;
-}
-
-#skills-content {
+#skills-container {
     display: grid;
     grid-template-columns: 2fr 3fr;
 }
 
-#skills-content div:nth-child(odd) {
+#skills-container div:nth-child(odd) {
     justify-self: end;
 }
 
-#skills-content div:nth-child(even) {
+#skills-container div:nth-child(even) {
     justify-self: flex-start;
 }
 
-#skills-content div {
+#skills-container div {
     font-family: Arial, Helvetica, sans-serif;
     font-size: var(--skill);
     padding: 10px;
 }
 
-.projects-content div:nth-child(3) .service-box {
-    text-align: left;
+.projects-container div:nth-child(3) .service-box {
+    text-align: center;
 }
 
-.projects-content div:nth-child(3) .service-box h3 {
+.projects-container div:nth-child(3) .service-box h3 {
     text-decoration: underline;
     text-align: center;
     padding-bottom: 10px;
@@ -195,19 +197,20 @@ footer p {
     margin-top: 50px;
 }
 
-#proj-summary {
+#proj-label, #oth-proj-label {
     font-size: var(--h2);
 }
 
-.service-box h3 {
-    font-size: var(--h3);
+#proj-label, #oth-proj-label, img {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.service-box h3 a, .service-box ol li a {
+.service-box h3 a {
     text-decoration: none;
 }
 
-.service-box ol li a span {
+.service-box h3 a:hover {
     text-decoration: underline;
 }
 
@@ -234,7 +237,7 @@ footer p {
 }
 
 @media only screen
-and (min-device-width : 451px)
+and (min-device-width : 501px)
 and (max-device-width : 800px) {
     :root {
         --name: 4rem;
@@ -246,18 +249,20 @@ and (max-device-width : 800px) {
         --skill: 2rem;
         --projInf: 2rem;
         --copy: 1.6rem;
+        --img-w: 30rem;
+        --img-h: 22.5rem;
     }
-    .service-box a i {
+    .service-box a img {
         padding: 15px;
     }
-    .projects-content div:nth-child(3) .service-box {
+    .projects-container div:nth-child(3) .service-box {
         text-align: center;
     }
 }
 
 @media only screen
 and (min-device-width : 1px)
-and (max-device-width : 450px) {
+and (max-device-width : 500px) {
     :root {
         --name: 4.5rem;
         --cntw: 15.25rem;
@@ -268,6 +273,8 @@ and (max-device-width : 450px) {
         --skill: 2.45rem;
         --projInf: 3rem;
         --copy: 2.4rem;
+        --img-w: 40rem;
+        --img-h: 30rem;
     }
     .col-sm-12 {
         flex: 0 0 auto!important;
@@ -283,13 +290,13 @@ and (max-device-width : 450px) {
     .contacts li:nth-child(even) {
         justify-self: start;
     }
-    #about-info div, #projects-info div, #skills-content {
-        margin-top: 50px;
+    #about-info div, #projects-info div, #skills-info {
+        margin-top: 30px;
     }
-    .service-box a i {
+    .service-box a img {
         padding: 15px;
     }
-    .projects-content div:nth-child(3) .service-box {
+    .projects-container div:nth-child(3) .service-box {
         text-align: center;
     }
 }
