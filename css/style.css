@@ -214,10 +214,6 @@ footer p {
     text-decoration: underline;
 }
 
-.row {
-    --bs-gutter-x: 0rem!important;
-}
-
 @keyframes intro-animation {
     0% {
         opacity: 0;
@@ -262,6 +258,9 @@ and (max-device-width : 800px) {
     .projects-container div:nth-child(3) .service-box {
         text-align: center;
     }
+    .row {
+        --bs-gutter-x: 0rem!important;
+    }
 }
 
 @media only screen
@@ -302,5 +301,8 @@ and (max-device-width : 500px) {
     }
     .projects-container div:nth-child(3) .service-box {
         text-align: center;
+    }
+    .row {
+        --bs-gutter-x: 0rem!important;
     }
 }
