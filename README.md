@@ -1,11 +1,11 @@
 # My Portfolio Website
 
-# Technologies Used
+Technologies Used
 
-* [HTML]
-* [CSS]
-* [BootStrap]
+* HTML
+* CSS
+* BootStrap
 
-# Contact
+Contact
 
-* [ttruong516581@gmail.com]
+* ttruong516581@gmail.com
