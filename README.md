@@ -8,4 +8,4 @@ Technologies Used
 
 Contact
 
-* ttruong516581@gmail.com
+* ttruong576581@gmail.com
