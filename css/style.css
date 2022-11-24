@@ -241,7 +241,7 @@ and (min-device-width : 501px)
 and (max-device-width : 800px) {
     :root {
         --name: 4rem;
-        --cntw: 9rem;
+        --cntw: 9.5rem;
         --cnts: 1.5rem;
         --abtInfo: 1.85rem;
         --h2: 2.75rem;
@@ -268,12 +268,12 @@ and (min-device-width : 1px)
 and (max-device-width : 500px) {
     :root {
         --name: 4.5rem;
-        --cntw: 15.25rem;
+        --cntw: 16.25rem;
         --cnts: 2.75rem;
         --abtInfo: 3rem;
         --h2: 4rem;
         --h3: 3.5rem;
-        --skill: 2.45rem;
+        --skill: 3.45rem;
         --projInf: 3rem;
         --copy: 2.4rem;
         --img-w: 40rem;
@@ -295,6 +295,17 @@ and (max-device-width : 500px) {
     }
     #about-info div, #projects-info div, #skills-info {
         margin-top: 30px;
+    }
+    #skills-container {
+        display: grid;
+        grid-template-columns: none;
+    }
+    #skills-container div:nth-child(odd) {
+        justify-self: center;
+        text-decoration: underline;
+    }
+    #skills-container div:nth-child(even) {
+        justify-self: center;
     }
     .service-box a img {
         padding: 15px;
