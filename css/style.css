@@ -187,7 +187,6 @@ footer p {
 }
 
 .projects-container div:nth-child(3) .service-box h3 {
-    text-decoration: underline;
     text-align: center;
     padding-bottom: 10px;
 }
@@ -206,11 +205,11 @@ footer p {
     margin-bottom: 15px;
 }
 
-.service-box h3 a {
+.service-box h3 a, .projects-container div:nth-child(3) .service-box h3 {
     text-decoration: none;
 }
 
-.service-box h3 a:hover {
+.service-box h3 a:hover, .projects-container div:nth-child(3) .service-box h3 a:hover {
     text-decoration: underline;
 }
 
