@@ -50,7 +50,7 @@ footer p {
 .header-container {
     height: 100%;
     width: 100%;
-    background: url("../images/office-table.jpg") no-repeat center;
+    background: url("../images/coffee-table.jpg") no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -58,8 +58,8 @@ footer p {
 }
 
 .darken {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../images/office-table.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../images/coffee-table.jpg");
 }
 
 #header-info {
