@@ -7,6 +7,7 @@
 /* Variable Declarations */
 :root {
     --name: 3rem;
+    --sub-title: 1.5rem;
     --cntw: 6.75rem;
     --cnts: 1rem;
     --abtInfo: 1rem;
@@ -78,6 +79,11 @@ footer p {
     font-size: var(--name);
     text-align: center;
     left: -5px
+}
+
+
+.job_title {
+    font-size: var(--sub-title);
 }
 
 .animation:nth-child(1) {
@@ -286,6 +292,7 @@ and (min-device-width : 501px)
 and (max-device-width : 800px) {
     :root {
         --name: 4rem;
+        --sub-title: 2.25rem;
         --cntw: 9.5rem;
         --cnts: 1.5rem;
         --abtInfo: 1.85rem;
@@ -315,13 +322,14 @@ and (min-device-width : 1px)
 and (max-device-width : 500px) {
     :root {
         --name: 4.5rem;
+        --sub-title: 3rem;
         --cntw: 16.25rem;
         --cnts: 2.75rem;
-        --abtInfo: 3rem;
+        --abtInfo: 2.5rem;
         --h2: 4rem;
         --h3: 3.5rem;
-        --skill: 3.45rem;
-        --projInf: 3rem;
+        --skill: 2.85rem;
+        --projInf: 2.7rem;
         --copy: 2.4rem;
         --img-w: 40rem;
         --img-h: 30rem;
