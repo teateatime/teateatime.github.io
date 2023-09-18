@@ -17,6 +17,8 @@
     --copy: 1rem;
     --img-w: 20rem;
     --img-h: 15rem;
+    --exp-t: 1rem;
+    --exp-h: 2rem;
 }
 
 html, body {
@@ -201,10 +203,12 @@ footer p {
 
 .experience-text h4 {
     margin: 0;
+    font-size: var(--exp-h);
 }
 
 .experience-text p {
     margin: 0;
+    font-size: var(--exp-t);
 }
 
 .experience-item img {
@@ -241,6 +245,18 @@ footer p {
 
 .service-box h3 a:hover, .projects-container div:nth-child(3) .service-box h3 a:hover {
     text-decoration: underline;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
 }
 
 @keyframes intro-animation {
@@ -280,6 +296,8 @@ and (max-device-width : 800px) {
         --copy: 1.6rem;
         --img-w: 30rem;
         --img-h: 22.5rem;
+        --exp-t: 1.4rem;
+        --exp-h: 1.9rem;
     }
     .service-box a img {
         padding: 15px;
@@ -307,6 +325,8 @@ and (max-device-width : 500px) {
         --copy: 2.4rem;
         --img-w: 40rem;
         --img-h: 30rem;
+        --exp-t: 1.9rem;
+        --exp-h: 2.7rem;
     }
     .col-sm-12 {
         flex: 0 0 auto!important;
@@ -335,6 +355,9 @@ and (max-device-width : 500px) {
     }
     #skills-container div:nth-child(even) {
         justify-self: center;
+    }
+    .experience-item img {
+        width: 400px;
     }
     .service-box a img {
         padding: 15px;
