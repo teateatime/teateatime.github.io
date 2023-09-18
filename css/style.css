@@ -161,7 +161,7 @@ footer p {
     font-size: var(--h3);
 }
 
-#about-label, #tech-summary, #xp-label {
+#about-label, #tech-summary, #xp-label, #oth-proj-label {
     font-size: var(--h2);
     margin: 0 auto;
 }
