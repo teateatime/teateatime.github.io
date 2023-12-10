@@ -4,6 +4,7 @@ Technologies Used
 
 * HTML
 * CSS
+* JS
 * BootStrap
 
 Contact
