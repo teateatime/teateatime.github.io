@@ -34,7 +34,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('path/to/your/background-image.jpg') center center no-repeat fixed;
+    background: url('/images/office-table.jpg') center center no-repeat fixed;
     background-size: cover;
     z-index: -1;
     opacity: 0;
@@ -351,8 +351,8 @@ and (max-device-width : 500px) {
         --copy: 2.4rem;
         --img-w: 40rem;
         --img-h: 30rem;
-        --exp-t: 1.9rem;
-        --exp-h: 2.7rem;
+        --exp-t: 2.5rem;
+        --exp-h: 2.75rem;
     }
     .col-sm-12 {
         flex: 0 0 auto!important;
@@ -382,8 +382,28 @@ and (max-device-width : 500px) {
     #skills-container div:nth-child(even) {
         justify-self: center;
     }
+    .experience-item {
+        display: flex;
+        flex-direction: column; /* Change to column for smaller screens */
+        align-items: center; /* Center items horizontally */
+        margin-bottom: 20px;
+    }
+    .experience-item:nth-child(2) {
+        flex-direction: column-reverse;
+    }
     .experience-item img {
-        width: 400px;
+        width: var(--img-w);
+        height: var(--img-h);
+        margin-bottom: 10px;
+    }
+
+    .experience-text h4 {
+        font-size: var(--exp-h);
+        margin-top: 10px;
+    }
+
+    .experience-text p {
+        font-size: var(--exp-t);
     }
     .service-box a img {
         padding: 15px;
