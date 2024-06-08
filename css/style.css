@@ -179,7 +179,7 @@ footer p {
     font-size: var(--h3);
 }
 
-#about-label, #tech-summary, #xp-label, #oth-proj-label {
+#about-label, #tech-summary, #xp-label, #oth-proj-label, #certs-label {
     font-size: var(--h2);
     margin: 0 auto;
 }
@@ -240,34 +240,40 @@ footer p {
     height: var(--img-h);
 }
 
-.projects-container div:nth-child(3) .service-box {
+.certs-container div:first-child {
+    margin: 0 auto;
+}
+
+.projects-container div:nth-child(3) .service-box, .certs-container div:nth-child(3) .service-box {
     text-align: center;
 }
 
-.projects-container div:nth-child(3) .service-box h3 {
+.projects-container div:nth-child(3) .service-box h3, .certs-container div:nth-child(3) .service-box h3 {
     text-align: center;
     padding-bottom: 10px;
 }
 
-#projects-info {
+#projects-info, #certs-info {
     font-size: var(--projInf);
     margin-top: 50px;
 }
 
-#proj-label, #oth-proj-label {
+#proj-label, #certs-label, #oth-proj-label {
     font-size: var(--h2);
 }
 
-#proj-label, #oth-proj-label, img {
+#proj-label, #certs-label, #oth-proj-label, img {
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.service-box h3 a, .projects-container div:nth-child(3) .service-box h3 {
+.service-box h3 a, .projects-container div:nth-child(3) .service-box h3,
+.certs-container div:nth-child(3) .service-box h3 {
     text-decoration: none;
 }
 
-.service-box h3 a:hover, .projects-container div:nth-child(3) .service-box h3 a:hover {
+.service-box h3 a:hover, .projects-container div:nth-child(3) .service-box h3 a:hover, 
+.certs-container div:nth-child(3) .service-box h3 a:hover {
     text-decoration: underline;
 }
 
@@ -327,7 +333,7 @@ and (max-device-width : 800px) {
     .service-box a img {
         padding: 15px;
     }
-    .projects-container div:nth-child(3) .service-box {
+    .projects-container div:nth-child(3) .service-box, .certs-container div:nth-child(3) .service-box {
         text-align: center;
     }
     .row {
@@ -368,7 +374,11 @@ and (max-device-width : 500px) {
     .contacts li:nth-child(even) {
         justify-self: start;
     }
-    #about-info div, #projects-info div, #skills-info {
+    .contacts li:last-child {
+        display: block;
+        width: 32%;
+    }
+    #about-info div, #projects-info div, #certs-info div, #skills-info {
         margin-top: 30px;
     }
     #skills-container {
@@ -408,7 +418,7 @@ and (max-device-width : 500px) {
     .service-box a img {
         padding: 15px;
     }
-    .projects-container div:nth-child(3) .service-box {
+    .projects-container div:nth-child(3) .service-box, .certs-container div:nth-child(3) .service-box {
         text-align: center;
     }
     .row {
