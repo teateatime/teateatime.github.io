@@ -17,3 +17,11 @@ function reveal(){
 document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("loaded");
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const img = new Image();
+    img.src = '/images/dark-desk.jpg';
+    img.onload = function() {
+        document.body.classList.add('loaded');
+    };
+});
