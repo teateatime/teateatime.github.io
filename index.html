@@ -23,8 +23,7 @@
     <!--Font-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300|Montserrat" rel="stylesheet" type="text/css">
 </head>
-<body>
-
+<body>       
     <div class="header-container darken">
         <div id="header-info">
             <h2 class="name">
@@ -40,6 +39,7 @@
                 <span class="animation">g</span>
             </h2>
             <h4 class="job_title">Software Engineer</h4>
+            <div id="model-header"></div>
             <ul class="contacts">
                 <li><a href="https://www.linkedin.com/in/tim-truong-0a7314217/" target="_blank">
                 <i class="fab fa-linkedin"></i>LinkedIn</a></li>
@@ -250,8 +250,8 @@
         </div>
     </div>
     
-    <hr style="margin-top: 25px; margin-bottom: 25px; margin-left: 25px; margin-right: 25px;">
-    <div class="container" id="certs-info" style="margin-top: 50px;">
+    <hr style="margin-top: 25px; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; background-color: #6c757d;">
+    <div class="container" id="certs-info"">
         <h2 class="text-center reveal" id="certs-label">Certificates</h2>
         <div class="certs-container text-center">
             <div class="reveal">
@@ -315,7 +315,7 @@
             </div>
         </div>
     </div>
-    <hr style="margin-top: 25px; margin-bottom: 25px; margin-left: 25px; margin-right: 25px;">
+    <hr style="margin-top: 25px; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; background-color: #6c757d;">
     <div class="container" id="projects-info">
         <h2 class="text-center reveal" id="proj-label">Projects</h2>
         <div class="projects-container text-center">
@@ -389,7 +389,7 @@
                 framework for a modular and scalable code architecture, resulting in an immersive user interface.
             </div>
         </div>
-        <hr style="margin-top: 25px; margin-bottom: 25px; margin-left: 25px; margin-right: 25px;">
+        <hr style="margin-top: 25px; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; background-color: #6c757d;">
         <h2 id="oth-proj-label" class="reveal text-center" style="font-size: var(--h2);">Other Projects</h2>
         <div class="projects-container text-center">
             <div class="reveal">
@@ -483,14 +483,15 @@
                 </div>
             </div>
         </div>
-        <!-- </div> -->
     </div>
+    
     <section>
         <footer class="container text-center">
             <p>Copyright © 2022 Tim Truong</p>
+            <div id="model-footer"></div>
         </footer>
     </section>
     <script src="js/script.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@2.2.0/dist/model-viewer.min.js"></script>
+    <script type="module" src="js/modelViewer.js"></script>
 </body>
 </html>
