@@ -365,9 +365,11 @@ footer p {
     background-color: mintcream;
 }
 
-/* .certs-container div:first-child {
-    margin: 20px auto;
-} */
+.projects-container, .certs-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
 
 .projects-container div:nth-child(3) .service-box, .certs-container div:nth-child(3) .service-box {
     text-align: center;
@@ -394,15 +396,6 @@ footer p {
 }
 
 /* .service-box {
-    margin: 15px;
-    padding: 5px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: aqua;
-    border-radius: 10px;
-} */
-
-/* .service-box {
     padding: 80px 92px;
     border-radius: 15px;
     backdrop-filter: blur(45px);
@@ -410,7 +403,7 @@ footer p {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 } */
 
-.certs-container div.reveal, .projects-container div.reveal {
+.certs-container div.reveal, .projects-container div.reveal, #bj {
     margin-bottom: 10px;
     padding: 80px 92px;
     border-radius: 15px;
@@ -423,6 +416,10 @@ footer p {
     /* border-color: aqua; */
     border-radius: 10px;
     animation: border-pulsate 5s infinite;
+}
+
+#bj {
+    text-align: center;
 }
 
 /* .service-box h3 a {
