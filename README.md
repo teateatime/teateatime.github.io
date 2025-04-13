@@ -4,8 +4,9 @@ Technologies Used
 
 * HTML
 * CSS
-* JS
+* JavaScript
 * BootStrap
+* Three.js
 
 Contact
 
