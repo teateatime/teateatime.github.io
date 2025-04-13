@@ -6,12 +6,6 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  container.style.position = 'relative';
-  container.style.width = '100%';
-  container.style.display = 'flex';
-  container.style.justifyContent = 'center';
-  container.appendChild(renderer.domElement);
-
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
   camera.position.z = cameraZ;
@@ -19,6 +13,13 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(size.width, size.height);
   renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  // Apply styles to container and add canvas after renderer is ready
+  container.style.position = 'relative';
+  container.style.width = '100%';
+  container.style.display = 'flex';
+  container.style.justifyContent = 'center';
   container.appendChild(renderer.domElement);
 
   const light = new THREE.AmbientLight(0xffffff, 1.5);
