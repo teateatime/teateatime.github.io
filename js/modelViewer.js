@@ -4,62 +4,47 @@ import { DRACOLoader } from 'https://unpkg.com/three@0.157.0/examples/jsm/loader
 
 function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { width: 200, height: 200 }, rotate = true }) {
   const container = document.getElementById(containerId);
-  if (!container) {
-    console.error(`Container with ID "${containerId}" not found.`);
-    return;
-  }
+  if (!container) return;
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+  const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
   camera.position.z = cameraZ;
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setClearColor(0x000000, 0);
   renderer.setSize(size.width, size.height);
-
-  container.style.position = 'relative';
-  container.style.width = '100%';
-  container.style.display = 'flex';
-  container.style.justifyContent = 'center';
+  renderer.setPixelRatio(window.devicePixelRatio);
   container.appendChild(renderer.domElement);
 
-  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.5);
-  scene.add(hemiLight);
+  const light = new THREE.AmbientLight(0xffffff, 1.5);
+  scene.add(light);
 
-  const dirLight = new THREE.DirectionalLight(0xffffff, 2);
-  dirLight.position.set(3, 5, 2);
-  dirLight.castShadow = true;
-  scene.add(dirLight);
-
-  // Setup DRACO Loader
   const dracoLoader = new DRACOLoader();
   dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
 
   const loader = new GLTFLoader();
   loader.setDRACOLoader(dracoLoader);
 
-  let model;
-
   loader.load(
     modelPath,
     (gltf) => {
-      model = gltf.scene;
+      const model = gltf.scene;
       model.scale.set(scale, scale, scale);
       scene.add(model);
+
+      let rotation = 0;
+      const animate = () => {
+        requestAnimationFrame(animate);
+        if (rotate) {
+          rotation += 0.01;
+          model.rotation.y = rotation;
+        }
+        renderer.render(scene, camera);
+      };
+      animate();
     },
     undefined,
-    (error) => {
-      console.error(`Failed to load ${modelPath}:`, error);
-    }
+    (err) => console.error(`Failed to load ${modelPath}:`, err)
   );
-
-  function animate() {
-    requestAnimationFrame(animate);
-    if (model && rotate) model.rotation.y += 0.01;
-    renderer.render(scene, camera);
-  }
-
-  animate();
 }
 
 // "Chill Cat" (https://skfb.ly/o877K) by Shix is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
@@ -69,8 +54,6 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
 // "Pikachu" (https://skfb.ly/6ZXrT) by Murky is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 // "Pika" (https://skfb.ly/6xyNL) by virums is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-
-// Load models on DOMContentLoaded
 window.addEventListener('DOMContentLoaded', () => {
   loadModel({
     containerId: 'model-header',
@@ -80,14 +63,4 @@ window.addEventListener('DOMContentLoaded', () => {
     size: { width: 150, height: 150 },
     rotate: true
   });
-
-  // Uncomment to load another model
-  // loadModel({
-  //   containerId: 'model-footer',
-  //   modelPath: 'models/pika.glb',
-  //   scale: 0.4,
-  //   cameraZ: 6,
-  //   size: { width: 250, height: 250 },
-  //   rotate: true
-  // });
 });
