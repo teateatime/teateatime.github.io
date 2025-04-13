@@ -6,6 +6,12 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
   const container = document.getElementById(containerId);
   if (!container) return;
 
+  container.style.position = 'relative';
+  container.style.width = '100%';
+  container.style.display = 'flex';
+  container.style.justifyContent = 'center';
+  container.appendChild(renderer.domElement);
+
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
   camera.position.z = cameraZ;
