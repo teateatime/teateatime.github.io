@@ -23,10 +23,13 @@
     --exp-h6: 1rem;
 }
 
-html, body {
+body {
     height: 100%;
     color: #1a1919 !important;
-    background: mintcream;
+    background: #1f1c1c!important;
+	/* background: linear-gradient(-45deg, #9352ee, #8b74fa, #2376d5, #23b7d5); */
+	/* background-size: 400% 400%; */
+	/* animation: gradient-animation 6s ease infinite; */
 }
 
 body::before {
@@ -46,6 +49,18 @@ body::before {
 body.loaded::before {
     opacity: 1;
 }
+
+/* @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+} */
 
 img {
     width: var(--img-w);
@@ -71,22 +86,24 @@ footer p {
 }
 
 .header-container {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background: url("../images/coffee-table.jpg") no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+
+    margin-bottom: 30px;
 }
 
 .darken {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-    url("../images/coffee-table.jpg");
+    url("../images/dark-desk.jpg");
 }
 
 #header-info {
-    position: absolute;
+    position: relative;
     top: 40%;
     width: 100%;
     text-align: center;
@@ -164,16 +181,17 @@ footer p {
     width: var(--cntw);
     position: relative;
     transition: color 0.3s ease, background-color 0.3s ease;
-    animation: border-pulsate 3s infinite;
+    animation: border-pulsate 5s infinite;
 }
 
 .web-link li a {
-    background: aqua;
+    /* background: aqua; */
+    background: linear-gradient(to bottom right, #6889FF, #C668FF);
     color: #1a1919;
 }
 
 .contacts li a:hover, .web-link li a:hover {
-    background: linear-gradient(to bottom right, #6889FF, #C668FF);
+    /* background: linear-gradient(to bottom right, #6889FF, #C668FF); */
     color: #fff;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     border-color: azure;
@@ -234,8 +252,10 @@ footer p {
 
 @keyframes border-pulsate {
     0%   { border-color: azure; }
-    33%  { border-color: rgb(71, 255, 249); }
-    66%  { border-color: rgb(164, 50, 246); }
+    20%  { border-color: rgb(71, 255, 249); }
+    40%  { border-color: rgb(164, 50, 246); }
+    60%  { border-color: rgb(236, 15, 162); }
+    80%  { border-color: rgb(245, 38, 72); }
     100% { border-color: azure; }
 }
 
@@ -255,7 +275,22 @@ footer p {
 
 #skills-info {
     margin-top: 0vh!important;
-    background-color: rgb(35, 209, 209);
+    /* background-color: rgb(35, 209, 209); */
+}
+
+#about-info, #skills-info {
+    border-width: 2px;
+    border-style: solid;
+    /* border-color: aqua; */
+    border-radius: 10px;
+
+    padding: 36px 42px;
+    border-radius: 15px;
+    backdrop-filter: blur(45px);
+    background-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    margin: 30px;
+    animation: border-pulsate 5s infinite;
 }
 
 #skills-container, #xp-container {
@@ -289,15 +324,22 @@ footer p {
 .experience-item {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 20px;
+    gap: 20px 10px;
     align-items: center;
     margin: 30px;
     margin-bottom: 20px;
-    padding: 50px;
+    /* padding: 50px; */
     border-width: 2px;
     border-style: solid;
-    border-color: aqua;
+    /* border-color: aqua; */
     border-radius: 10px;
+
+    padding: 36px 42px;
+    border-radius: 15px;
+    backdrop-filter: blur(45px);
+    background-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    animation: border-pulsate 5s infinite;
 }
 
 .experience-text h4 {
@@ -338,6 +380,8 @@ footer p {
 #projects-info, #certs-info {
     font-size: var(--projInf);
     margin-top: 50px;
+
+    color: azure;
 }
 
 #proj-label, #certs-label, #oth-proj-label {
@@ -356,6 +400,33 @@ footer p {
     border-style: solid;
     border-color: aqua;
     border-radius: 10px;
+} */
+
+/* .service-box {
+    padding: 80px 92px;
+    border-radius: 15px;
+    backdrop-filter: blur(45px);
+    background-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+} */
+
+.certs-container div.reveal, .projects-container div.reveal {
+    margin-bottom: 10px;
+    padding: 80px 92px;
+    border-radius: 15px;
+    backdrop-filter: blur(45px);
+    background-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+
+    border-width: 2px;
+    border-style: solid;
+    /* border-color: aqua; */
+    border-radius: 10px;
+    animation: border-pulsate 5s infinite;
+}
+
+/* .service-box h3 a {
+    color: #1a1919;
 } */
 
 .service-box h3 a, .projects-container div:nth-child(3) .service-box h3,
@@ -378,6 +449,10 @@ footer p {
 .reveal.active {
     transform: translateY(0px);
     opacity: 1;
+}
+
+#about-info, #skills-info, #about-label, #tech-summary, #xp-label, .experience-text, .experience-text h4, .service-box h3 a, footer {
+    color: azure;
 }
 
 @keyframes intro-animation {
