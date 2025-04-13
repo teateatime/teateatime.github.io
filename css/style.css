@@ -592,6 +592,11 @@ and (max-device-width : 500px) {
     .service-box a img {
         padding: 15px;
     }
+    .projects-container, .certs-container {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 10px;
+    }
     .projects-container div:nth-child(3) .service-box, .certs-container div:nth-child(3) .service-box {
         text-align: center;
     }
