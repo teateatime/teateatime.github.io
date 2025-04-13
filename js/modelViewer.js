@@ -1,5 +1,6 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.module.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.157.0/examples/jsm/loaders/GLTFLoader.js?module';
+import { DRACOLoader } from 'https://unpkg.com/three@0.157.0/examples/jsm/loaders/DRACOLoader.js?module';
 
 function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { width: 200, height: 200 }, rotate = true }) {
   const container = document.getElementById(containerId);
@@ -30,7 +31,13 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
   dirLight.castShadow = true;
   scene.add(dirLight);
 
+  // Setup DRACO Loader
+  const dracoLoader = new DRACOLoader();
+  dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+
   const loader = new GLTFLoader();
+  loader.setDRACOLoader(dracoLoader);
+
   let model;
 
   loader.load(
@@ -48,7 +55,7 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
 
   function animate() {
     requestAnimationFrame(animate);
-    if (model && rotate) model.rotation.y += 0.01; // Rotate only if 'rotate' is true
+    if (model && rotate) model.rotation.y += 0.01;
     renderer.render(scene, camera);
   }
 
@@ -62,7 +69,8 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
 // "Pikachu" (https://skfb.ly/6ZXrT) by Murky is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 // "Pika" (https://skfb.ly/6xyNL) by virums is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-// Load both models
+
+// Load models on DOMContentLoaded
 window.addEventListener('DOMContentLoaded', () => {
   loadModel({
     containerId: 'model-header',
@@ -70,9 +78,10 @@ window.addEventListener('DOMContentLoaded', () => {
     scale: 0.5,
     cameraZ: 1,
     size: { width: 150, height: 150 },
-    rotate: true // Enable rotation for the first model
+    rotate: true
   });
 
+  // Uncomment to load another model
   // loadModel({
   //   containerId: 'model-footer',
   //   modelPath: 'models/pika.glb',
