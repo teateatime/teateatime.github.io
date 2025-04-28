@@ -13,7 +13,6 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(size.width, size.height);
   renderer.setPixelRatio(window.devicePixelRatio);
-  container.appendChild(renderer.domElement);
 
   // Apply styles to container and add canvas after renderer is ready
   container.style.position = 'relative';
@@ -36,8 +35,16 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
     (gltf) => {
       const model = gltf.scene;
       model.scale.set(scale, scale, scale);
+  
+      model.traverse((child) => {
+        if (child.isMesh && child.material && !(child.material instanceof THREE.MeshStandardMaterial)) {
+          const matProps = { ...child.material };
+          child.material = new THREE.MeshStandardMaterial(matProps);
+        }
+      });
+  
       scene.add(model);
-
+  
       let rotation = 0;
       const animate = () => {
         requestAnimationFrame(animate);
@@ -51,7 +58,7 @@ function loadModel({ containerId, modelPath, scale = 0.5, cameraZ = 1, size = { 
     },
     undefined,
     (err) => console.error(`Failed to load ${modelPath}:`, err)
-  );
+  );  
 }
 
 // "Chill Cat" (https://skfb.ly/o877K) by Shix is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
