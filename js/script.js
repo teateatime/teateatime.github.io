@@ -15,8 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const preloadBg = new Image();
     preloadBg.src = '/images/dark-desk.jpg';
     preloadBg.onload = () => {
-      document.body.style.backgroundImage = `url(${preloadBg.src})`;
-      document.body.classList.add('loaded');
+        const bgContainer = document.querySelector('.darken');
+        if (bgContainer) {
+            bgContainer.style.backgroundImage = `url(${preloadBg.src})`;
+            bgContainer.classList.add('loaded');
+        }
     };
 });
+
   

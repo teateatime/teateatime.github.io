@@ -102,6 +102,15 @@ footer p {
 .darken {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
     url("../images/dark-desk.jpg");
+
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+    margin-bottom: 30px;
 }
 
 #header-info {
