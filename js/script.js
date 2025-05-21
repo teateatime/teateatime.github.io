@@ -1,17 +1,5 @@
-window.addEventListener("scroll", () => {
-    const reveals = document.querySelectorAll('.reveal');
-    const windowHeight = window.innerHeight;
-    const revealPoint = 150;
-  
-    for (let el of reveals) {
-      if (el.getBoundingClientRect().top < windowHeight - revealPoint) {
-        el.classList.add('active');
-      }
-    }
-});
-  
 document.addEventListener("DOMContentLoaded", () => {
-    // Preload background image as early as possible
+    // Background preload optimization
     const preloadBg = new Image();
     preloadBg.src = '/images/dark-desk.jpg';
     preloadBg.onload = () => {
@@ -21,6 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
             bgContainer.classList.add('loaded');
         }
     };
-});
 
-  
+    // Reveal on scroll using IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Unobserve for performance
+            }
+        }
+    }, { threshold: 0.1 });
+
+    const reveals = document.querySelectorAll('.reveal');
+    for (const el of reveals) {
+        observer.observe(el);
+    }
+});
