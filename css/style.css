@@ -109,11 +109,12 @@ footer p {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-
+    
     margin-bottom: 30px;
 }
 
 #header-info {
+    padding-top: 100px;
     position: relative;
     top: 20%;
     width: 100%;
